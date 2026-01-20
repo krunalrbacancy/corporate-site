@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Meta from "../components/common/Meta";
+const APP_URL = import.meta.env.VITE_APP_URL;
 
 const EMPTYSTATE = {
   name: "",
@@ -82,7 +83,7 @@ const Contact = () => {
   };
   
   const fetchContactData = async (data: EmptyStateProps) => {
-    const response = await fetch("http://localhost:5000/contact", {
+    const response = await fetch(`${APP_URL}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
