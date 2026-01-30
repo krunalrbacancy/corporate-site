@@ -4,5 +4,9 @@ export const ROUTES = {
   SERVICES: "/services",
   BLOG: "/blog",
   CONTACT: "/contact",
-  CAREERS: "/careers",
+  CAREERS: "/careers/*",
+} as const;
+
+export const NAV_ROUTES = {
+  CAREERS: "/careers", // navigation only
 } as const;

@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { ROUTES } from "./routePaths";
 
 const Home = lazy(() => import("../pages/Home"));
 const Contact = lazy(() => import("../pages/Contact"));
+const CareersRoutes = lazy(() => import("../modules/careers/routes/careers.routes"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 export default function AppRoutes() {
@@ -12,6 +13,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.CONTACT} element={<Contact />} />
+        <Route path={ROUTES.CAREERS} element={<CareersRoutes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

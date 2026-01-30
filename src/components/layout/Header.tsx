@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { ROUTES } from "../../routes/routePaths";
+import { ROUTES, NAV_ROUTES } from "../../routes/routePaths";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   isActive
@@ -27,7 +27,7 @@ export default function Header() {
           <NavLink to={ROUTES.BLOG} className={navLinkClass}>
             Blog
           </NavLink>
-          <NavLink to={ROUTES.CAREERS} className={navLinkClass}>
+          <NavLink to={NAV_ROUTES.CAREERS} className={navLinkClass}>
             Careers
           </NavLink>
           <NavLink to={ROUTES.CONTACT} className={navLinkClass}>
