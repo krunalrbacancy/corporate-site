@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Meta from "../../../components/common/Meta";
 import JobCard from "../components/JobCard";
 import { currentOpenings } from "../data/jobs";
@@ -13,12 +12,7 @@ const CareersList = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {currentOpenings.map((job) => (
-              <Link 
-                key={job.id}
-                to={`/careers/${job.slug}`}
-                className="d-block">
-                <JobCard job={job} />
-              </Link>
+              <JobCard key={job.id} job={job} />
             ))}
           </div>
         </div>

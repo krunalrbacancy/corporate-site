@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { Job } from "../data/jobs";
 
 type JobCardProps = {
@@ -6,7 +7,7 @@ type JobCardProps = {
 const JobCard = ({ job }: JobCardProps) => {
   return (
     <>
-      <div className="cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
+      <Link to={`/careers/${job.slug}`} className="bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">{ job.title }</h2>
         <div className="space-y-3">
           <div className="flex items-center text-gray-600">
@@ -31,7 +32,7 @@ const JobCard = ({ job }: JobCardProps) => {
             <span className="text-base">{ job.type }</span>
           </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 };

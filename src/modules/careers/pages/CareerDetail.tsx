@@ -34,14 +34,14 @@ const CareerDetail = () => {
           </h1>
 
           <div className="flex flex-wrap gap-3 mb-6">
-            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
-              📍 {job.location}
+            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700" role="text">
+              <span aria-hidden="true">📍</span> <span className="sr-only">Location:</span> {job.location}
             </span>
-            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
-              💼 {job.experience}
+            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700" role="text">
+              <span aria-hidden="true">💼</span> <span className="sr-only">Experience:</span> {job.experience}
             </span>
-            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700">
-              ⏱ {job.type}
+            <span className="px-4 py-1 rounded-full text-sm bg-gray-100 text-gray-700" role="text">
+              <span aria-hidden="true">⏱</span> <span className="sr-only">Type:</span> {job.type}
             </span>
           </div>
 
@@ -81,7 +81,7 @@ const CareerDetail = () => {
             {job.requiredSkillsExperience && (
               <>
                 <h3 className="text-xl font-semibold mb-3">
-                  Required Skills Experience:
+                  Required Skills & Experience:
                 </h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-2">
                   {job.requiredSkillsExperience.map((item, idx) => (

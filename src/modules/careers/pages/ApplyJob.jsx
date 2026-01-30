@@ -1,8 +1,7 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { currentOpenings } from "../data/jobs";
 
 const ApplyJob = () => {
-  const navigate = useNavigate();
   const { slug } = useParams();
   const job = currentOpenings.find((job) => job.slug === slug);
   
@@ -22,13 +21,12 @@ const ApplyJob = () => {
   
   return (
     <div className="container mx-auto px-4 py-16">
-      <button
-        type="button"
-        onClick={() => navigate(-1)}
+      <Link
+        to={`/careers/${job.slug}`}
         className="text-sm text-blue-600 hover:underline"
       >
         ← Back to Job Details
-      </button>
+      </Link>
       <h1 className="text-3xl font-bold mt-2 mb-6">
         Apply for {job.title}
       </h1>
