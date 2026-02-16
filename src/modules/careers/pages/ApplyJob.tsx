@@ -100,14 +100,13 @@ const ApplyJob = () => {
       setError((prev) => ({
         ...prev,
         resume: "File must be less than 5MB"
-      }));
-      return; // Don't store the oversized file
+      }))
+      return;
     }
 
     setFormData(prev => ({
       ...prev,
       resume: files,
-    }));
     }));
   };
 
